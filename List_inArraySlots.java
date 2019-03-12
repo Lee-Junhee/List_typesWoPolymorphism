@@ -65,15 +65,20 @@ public class List_inArraySlots {
     /**
       Appends @value to the end of this list.
 
-      @return true, in keepi:w
-      ng with conventions yet to be discussed
+      @return true, in keeping with conventions yet to be discussed
      */
-     // public boolean add( int type   // same meaning as in typeOfElements
-                       // , int intValue
-                       // , double doubleValue
-                       // , String stringValue
-                       // ) {
-     // }
+     public boolean add( int type   // same meaning as in typeOfElements
+                       , int intValue
+                       , double doubleValue
+                       , String stringValue
+                       ) {
+         if (filedElements == typeOfElements.length)
+             expand();
+	 typeOfElements[filledElements] = type;
+	 intElements[filledElements] = intValue;
+	 doubleElements[filledElements] = doubleValue;
+	 stringElements[filledElements] = stringValue;
+     }
 
 
     /**

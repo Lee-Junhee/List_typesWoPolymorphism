@@ -47,14 +47,26 @@ public class List_inArraySlots {
        @return a string representation of this list,
        in [a,b,c,] format
       */
-    // public String toString() {
-    // }
+    public String toString() {
+        int output = "[ ";
+	for(int index = 0; index < filledElements; index++) {
+	    if (typeOfElements[index] == INT)
+	        output += intElements[index];
+	    if (typeOfElements[index] == DOUBLE)
+		output += doubleElements[index];
+	    if (typeOfElements[index] == STRING)
+		output += stringElements[index];
+	    output += ", ";
+	}
+        return output + "]";	
+    }
 
 
     /**
       Appends @value to the end of this list.
 
-      @return true, in keeping with conventions yet to be discussed
+      @return true, in keepi:w
+      ng with conventions yet to be discussed
      */
      // public boolean add( int type   // same meaning as in typeOfElements
                        // , int intValue

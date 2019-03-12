@@ -56,7 +56,7 @@ public class List_inArraySlots {
 		output += doubleElements[index];
 	    if (typeOfElements[index] == STRING)
 		output += stringElements[index];
-	    output += ", ";
+	    output += ",";
 	}
         return output + "]";	
     }
@@ -72,7 +72,7 @@ public class List_inArraySlots {
                        , double doubleValue
                        , String stringValue
                        ) {
-         if (filedElements == typeOfElements.length)
+         if (filledElements == typeOfElements.length)
              expand();
 	 typeOfElements[filledElements] = type;
 	 intElements[filledElements] = intValue;
@@ -85,13 +85,32 @@ public class List_inArraySlots {
       Double the capacity of the List_inArraySlots,
       preserving existing data.
      */
-     // private void expand() {
-        // System.out.println( "expand... (for debugging)");
-           // /* S.O.P. rules for debugging:
-              // Working methods should be silent. But during
-              // development, the programmer must verify that
-              // this method is called when that is appropriate.
-              // So test using the println(), then comment it out.
-              // */
-     // }
+     private void expand() {
+        System.out.println( "expand... (for debugging)");
+           /* S.O.P. rules for debugging:
+              Working methods should be silent. But during
+              development, the programmer must verify that
+              this method is called when that is appropriate.
+              So test using the println(), then comment it out.
+              */
+	int[] biggerInt = new int[ intElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            biggerInt[ elemIndex] = intElements[ elemIndex];
+        intElements = biggerInt;
+
+	double[] biggerDouble = new double[ doubleElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            biggerDouble[ elemIndex] = doubleElements[ elemIndex];
+        doubleElements = biggerDouble;
+
+	String[] biggerString = new String[ stringElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            biggerString[ elemIndex] = stringElements[ elemIndex];
+        stringElements = biggerString;
+
+	int[] biggerType = new int[ typeOfElements.length * 2];
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
+            biggerType[ elemIndex] = typeOfElements[ elemIndex];
+        typeOfElements = biggerType;
+     }
 }

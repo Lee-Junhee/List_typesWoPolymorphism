@@ -115,4 +115,13 @@ public class List_inArraySlots {
             biggerType[ elemIndex] = typeOfElements[ elemIndex];
         typeOfElements = biggerType;
      }
+
+     public Element get(int index) {
+         Element data = new Element( typeOfElements[index]
+			           , intElements[index]
+				   , doubleElements[index],
+				   , stringElements[index]
+				   );
+	 return data;
+     }
 }

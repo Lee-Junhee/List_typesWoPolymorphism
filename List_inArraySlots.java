@@ -48,7 +48,7 @@ public class List_inArraySlots {
        in [a,b,c,] format
       */
     public String toString() {
-        int output = "[ ";
+        String output = "[ ";
 	for(int index = 0; index < filledElements; index++) {
 	    if (typeOfElements[index] == INT)
 	        output += intElements[index];
@@ -78,6 +78,8 @@ public class List_inArraySlots {
 	 intElements[filledElements] = intValue;
 	 doubleElements[filledElements] = doubleValue;
 	 stringElements[filledElements] = stringValue;
+	 filledElements++;
+	 return true;
      }
 
 

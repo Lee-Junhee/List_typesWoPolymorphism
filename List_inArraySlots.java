@@ -114,12 +114,12 @@ public class List_inArraySlots {
 
      }
 
-     public String get(int index) {
+     public Object get(int index) {
          Element data = new Element( typeOfElements[index]
 			           , intElements[index]
 				   , doubleElements[index]
 				   , stringElements[index]
 				   );
-	 return data.toString();
+	 return data;
      }
 }

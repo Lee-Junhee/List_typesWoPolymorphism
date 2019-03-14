@@ -34,5 +34,10 @@ public class UserOfList {
         System.out.println("result of expanded list: "
              + list.size() + " elements:");
         System.out.println( list + System.lineSeparator());
+
+	// Test get method
+	System.out.println( list.get(0));   // expecting important
+	System.out.println( list.get(2));   // expecting 1.618
+	System.out.println( list.get(10));  // expecting -10
     }
 }

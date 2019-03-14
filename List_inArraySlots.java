@@ -48,7 +48,7 @@ public class List_inArraySlots {
        in [a,b,c,] format
       */
     public String toString() {
-        String output = "[ ";
+        String output = "[";
 	for(int index = 0; index < filledElements; index++) {
 	    if (typeOfElements[index] == INT)
 	        output += intElements[index];
@@ -96,32 +96,30 @@ public class List_inArraySlots {
               So test using the println(), then comment it out.
               */
 	int[] biggerInt = new int[ intElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            biggerInt[ elemIndex] = intElements[ elemIndex];
-        intElements = biggerInt;
-
 	double[] biggerDouble = new double[ doubleElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            biggerDouble[ elemIndex] = doubleElements[ elemIndex];
-        doubleElements = biggerDouble;
-
 	String[] biggerString = new String[ stringElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            biggerString[ elemIndex] = stringElements[ elemIndex];
-        stringElements = biggerString;
-
 	int[] biggerType = new int[ typeOfElements.length * 2];
-        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++)
-            biggerType[ elemIndex] = typeOfElements[ elemIndex];
-        typeOfElements = biggerType;
+	
+        for( int elemIndex = 0; elemIndex < filledElements; elemIndex++) {
+            biggerInt[ elemIndex] = intElements[ elemIndex];
+	    biggerDouble[ elemIndex] = doubleElements[ elemIndex];
+	    biggerString[ elemIndex] = stringElements[ elemIndex];
+	    biggerType[ elemIndex] = typeOfElements[ elemIndex];
+	}
+	
+        intElements = biggerInt;
+	doubleElements = biggerDouble;
+	stringElements = biggerString;
+	typeOfElements = biggerType;
+
      }
 
-     public Element get(int index) {
+     public String get(int index) {
          Element data = new Element( typeOfElements[index]
 			           , intElements[index]
-				   , doubleElements[index],
+				   , doubleElements[index]
 				   , stringElements[index]
 				   );
-	 return data;
+	 return data.toString();
      }
 }
